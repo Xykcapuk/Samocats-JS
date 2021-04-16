@@ -14,6 +14,8 @@
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "@babel/runtime-corejs3": "^7.13.10",
+    "s": "^1.0.0",
+    "sr": "^1.0.4",
     "src": "^1.1.2"
   },
   "devDependencies": {

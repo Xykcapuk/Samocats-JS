@@ -115,15 +115,15 @@ const listItem = [
 	},
 ];
 
-const catalogContainer = document.querySelector('#app');
-export default function rednder() {
+
+export default function rednder(container) {
 	for(let i = 0; i < listItem.length; i++) {
-			catalogContainer.innerHTML += `
-			<div class="card">
+		container.innerHTML += `
+			<a data-link="true" href="/product/${listItem[i].idKey}" class="card">
 				<div class="imgItem"> <img src="${img}"/> </div>
 				<div class="type"> ${listItem[i].type} </div>
 				<div class="brand"> ${listItem[i].brand} </div>
-			</div>
+			</a>
 			` ;
 	}
 }
