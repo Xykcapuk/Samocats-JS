@@ -1,35 +1,36 @@
-body {
-	margin: 0;
-}
 
-#app {
+.catalog {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: space-around;
 }
 
-.card {
+.catalog .card {
 	width: 33%;
-	padding: 20px 0 20px 0;
+	padding: 20px;
+	box-sizing: border-box;
+	min-width: 300px;
 }
 
-.imgItem {
+.catalog .imgItem {
 	display: flex;
 	width: 100%;
 	height: 250px;
 	justify-content: center;
 }
 
-img {
+.catalog img {
 	text-align: center;
+	max-width: 100%;
 }
 
-.type, .brand, .buttomDelete{
+.catalog .type, .catalog .brand, .catalog .buttomDelete{
 	font-size: 18px;
 	text-align: center;
 	padding-top: 5px;
 }
 
-.buttomAdd {
+.catalog .buttomAdd {
 	width: 100%;
 	margin: 10px 0 0 20px;
 }

@@ -1,32 +1,19 @@
-import "./styles.css";
-import catchLink from './Utils/catchLink';
-import routers from './Router/config';
 // import renderCatalog from "./Users/catalog";
 // import renderProduct from "./Users/catalog";
 // import renderHome from './Home/home';
 
 
-(async() => {
-	
-	const container = document.querySelector('#app');
-	catchLink(container);
-	async function router() {
-		const currentPath = decodeURI(window.location.pathname + window.location.search).toString().replace(/\/$/, '').replace(/^\//, '');
-		for (const route of routers) { 
-			try {
-				const reg = new RegExp('^' + route.path.replace(/:\w+/g, '(\\w+)') + '$');
-				const partPath = currentPath.match(reg);
-				if (partPath) {
-					// route.name;
-					const m = await route.method;
-					m.default(container);
 
-				}
-			} catch (err) {
-				console.log(err);
-			}
-		}
-	}
-	catchLink(container, router);
-	await router();
+
+
+import "./styles.css"; // Импортировали SRC/catalog.css 
+import catchLink from './Utils/catchLink'; // Импортировали из Utils/catchLink.js
+import router from './Router/index';
+
+(async() => { // создали асинхронную функцию
+
+	const container = document.querySelector('#app'); // Создали сontainer и вернули все элементы, находящиеся в #app
+	
+	catchLink(container, router); // вызываем метод catchLink с аргументами container и router, в которые внесли новые данные
+	await router(container); // вызываем асинхронную функцию router
 })();

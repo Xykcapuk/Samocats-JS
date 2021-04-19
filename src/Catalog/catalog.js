@@ -1,7 +1,7 @@
-import "./catalog.css";
-import img from '../PublicPhoto/mechanism/bicycleCross.jpg';
+import "./catalog.css"; // Импортировали Users/catalog.css 
+import img from '../PublicPhoto/mechanism/bicycleCross.jpg'; //Принудительно подвязали картинку
 
-const listItem = [
+const listItem = [ //временный массив карточек оборудования. Ждём базу данных от бэка
 	{
 		type:'Велосипед',
 		brand:'Cross',
@@ -115,15 +115,20 @@ const listItem = [
 	},
 ];
 
+export default function render(wraper) { // Экспортировали по умолчанию функцию rednder с аргументом container из SRC/index.js
 
-export default function rednder(container) {
-	for(let i = 0; i < listItem.length; i++) {
-		container.innerHTML += `
+	for(let i = 0; i < listItem.length; i++) { // пробегаемся по массиву оборудования
+		// записываем (не перезатираем) данные в документ index.html
+		wraper.innerHTML += `
 			<a data-link="true" href="/product/${listItem[i].idKey}" class="card">
-				<div class="imgItem"> <img src="${img}"/> </div>
+			<div class="imgItem"> <img src="${img}"/> </div>
 				<div class="type"> ${listItem[i].type} </div>
 				<div class="brand"> ${listItem[i].brand} </div>
 			</a>
 			` ;
-	}
+	} 	/* на 122 строке - в data-link записываем ссылку на продукт по idKey
+			на 123 строке - добавляем картинку оборудования на страницу 
+			на 124 строке - добавляем тип оборудования на страницу 
+			на 125 строке - добавляем бренд оборудования на страницу 
+	*/
 }
