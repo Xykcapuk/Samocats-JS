@@ -19,10 +19,9 @@ export default async function router(container) { // вызвали функци
 					//debugger
 				}
 				container.innerHTML = '';
-				const wraper = document.createElement('div'); // в catalog поместили HTML Объект (div)
-				wraper.classList.add(route.name); // к div добавили класс catalog
-				container.append(wraper); // в переменнцую catalog добавляем Объект catalog
-				route.cache.default(wraper); // у m вызываем метод по умолчанию с аргументом container (#app)
+				container.className = route.name;
+				document.title = route.name;
+				route.cache.default(container); // у m вызываем метод по умолчанию с аргументом container (#app)
 			}
 		} catch (err) { // в данном случаем выведем ошибку в консоль
 			console.log(err); // вывод в консоль

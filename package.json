@@ -14,6 +14,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "@babel/runtime-corejs3": "^7.13.10",
+    "pic": "^1.0.1",
     "s": "^1.0.0",
     "sr": "^1.0.4",
     "src": "^1.1.2"
@@ -30,4 +31,5 @@
     "postcss-modules": "^4.0.0",
     "prettier": "^2.2.1"
   }
+  
 }

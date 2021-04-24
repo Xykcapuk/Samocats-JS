@@ -1,20 +1,27 @@
 import "./home.css"; // Импортировали home.css
-import img from '../PublicPhoto/mechanism/bicycleCross.jpg'; // Принудительно подвязали картинку
+//import img from '/PublicPhoto/logo/logo1'; // Принудительно подвязали картинку
 
-export default function render(wraper) { // Экспортируем по умолчанию функцию renderHome
+export default function render(container) { // Экспортируем по умолчанию функцию renderHome
 	
-	// В этот контейнер поместили элемент HTML-документа <h1> Home </h1>
-	wraper.innerHTML = ` 
-		<div>
-			<h1>Добро пожаловать на Самокат.ru</h1>
-			<p> Здесь Вы сможете взять в аренду транспортное средство для удобного передвижения по Вашему городу. Для это просто нажмите кнопку "Погнали"</p>
-			</div>
-			<div class="imgItem"> <img src="${img}"/> </div>
-			<div>
-			<a href="/catalog" data-link="true">
-				<button>Погнали</button>
-			</a>
-			
-		</div>
-			`
+	function goToPage()
+{
+	var url = document.getElementById('');
+	document.location.href = url.value;
 }
+	// В этот контейнер поместили элемент HTML-документа <h1> Home </h1>
+	container.innerHTML = ` 
+	<div class="home-container">
+		<img class="home-element__img"src="https://i.ibb.co/kQY0r8J/logo1.jpg" />
+		<span class="home-element__h1"> Добро пожаловать на Samocat.ru </span>
+			<a data-link="true" href="./">
+				<button class="home-element__btn">Перейти в каталог</button>
+			</a>
+	</div>
+	`
+}
+
+
+
+//<span class="home-element__text2"> или </span>
+//<button class="home-element__reg">Зарегистрируйтесь</button> 
+//<span class="home-element__text"> Для продолжения </span>
