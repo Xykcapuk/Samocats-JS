@@ -115,14 +115,14 @@ const listItem = [ //временный массив карточек обору
 		},
 ];
 
-import Balance from "/Components/balance/balance.js"
+import Balance from "/Components/balance/balance.js";
 
-export default function render(container) { // Экспортировали по умолчанию функцию rednder с аргументом container из SRC/index.js
+export default async function render(container) { // Экспортировали по умолчанию функцию render с аргументом container из SRC/index.js
 
-	container.innerHTML = Balance()
-	let wr = document.createElement('div')
-	wr.className = 'wr-catalog'
-	container.append(wr)
+	container.innerHTML = await Balance();
+	let wr = document.createElement('div');
+	wr.className = 'wr-catalog';
+	container.append(wr);
 
 	for(let i = 0; i < listItem.length; i++) { // пробегаемся по массиву оборудования
 		// записываем (не перезатираем) данные в документ index.html

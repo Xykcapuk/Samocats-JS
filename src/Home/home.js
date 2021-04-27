@@ -3,23 +3,31 @@ import "./home.css"; // Импортировали home.css
 
 export default function render(container) { // Экспортируем по умолчанию функцию renderHome
 	
-	function goToPage()
-{
+	function goToPage() {
 	var url = document.getElementById('');
-	document.location.href = url.value;
-}
+		document.location.href = url.value;
+	}
+	function button() {
+		
+
+	}
 	// В этот контейнер поместили элемент HTML-документа <h1> Home </h1>
 	container.innerHTML = ` 
 	<div class="home-container">
 		<img class="home-element__img"src="https://i.ibb.co/kQY0r8J/logo1.jpg" />
 		<span class="home-element__h1"> Добро пожаловать на Samocat.ru </span>
-			<a data-link="true" href="./">
-				<button class="home-element__btn">Перейти в каталог</button>
-			</a>
+		<a data link="true" href="${'catalog'}">
+			<button class="home-element__btn">Перейти в каталог</button>
+		</a>
 	</div>
 	`
+
+	
 }
 
+
+/*<a data-link="true" href="./">*/
+//<input type="button" value="Перейти в каталог" onclick="location.href='http://localhost:1234/catalog.html'" />
 
 
 //<span class="home-element__text2"> или </span>

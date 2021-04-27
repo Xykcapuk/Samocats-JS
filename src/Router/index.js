@@ -21,10 +21,15 @@ export default async function router(container) { // вызвали функци
 				container.innerHTML = '';
 				container.className = route.name;
 				document.title = route.name;
-				route.cache.default(container); // у m вызываем метод по умолчанию с аргументом container (#app)
+				await route.cache.default(container); // у m вызываем метод по умолчанию с аргументом container (#app)
 			}
 		} catch (err) { // в данном случаем выведем ошибку в консоль
 			console.log(err); // вывод в консоль
 		}
 	}
+
+
+
+
 }
+

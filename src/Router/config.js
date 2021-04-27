@@ -10,7 +10,7 @@ export default [ // экспортируем файлы по умолчанию,
 	{ // тоже самое
 	name: 'product',
 	path: 'product/:id',
-	method: import("../Home/home.js"),
+	method: import("../Products/products.js"),
 	cache: null
 	},
 	{ // тоже самое
