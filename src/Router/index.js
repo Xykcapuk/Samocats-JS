@@ -10,26 +10,24 @@ export default async function router(container) { // вызвали функци
 	for (const route of routes) { // делаем цикл, где в route помещаем данные, взятые у routers
 		try { // конструкция try catch для обработки ошибок с await
 			const reg = new RegExp('^' + route.path.replace(/:\w+/g, '(\\w+)') + '$'); // записываем в reg совпадения и меняем их
+			//console.log
 			const slug = currentPath.match(reg); 	// записываем в partPath вызываемый математический метод у currentPath с аргументом reg, 
 																	// записанный в результате выполнения 29 строки
+			//console.log
 			if (slug) { // создаем условие, если partPath == true
 				// route.name;
 				if (route.cache === null) {
-					route.cache = await route.method; // записываем в переменную m ожидание route у которого вызываем method
+					route.cache = await route.page; // записываем в переменную m ожидание route у которого вызываем method
 					//debugger
 				}
+
 				container.innerHTML = '';
 				container.className = route.name;
-				document.title = route.name;
-				await route.cache.default(container); // у m вызываем метод по умолчанию с аргументом container (#app)
+				document.title = route.title;
+				route.cache.default(container); // у m вызываем метод по умолчанию с аргументом container (#app)
 			}
 		} catch (err) { // в данном случаем выведем ошибку в консоль
 			console.log(err); // вывод в консоль
 		}
 	}
-
-
-
-
 }
-

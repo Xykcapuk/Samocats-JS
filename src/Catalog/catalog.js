@@ -117,19 +117,14 @@ const listItem = [ //временный массив карточек обору
 
 import Balance from "/Components/balance/balance.js";
 
-export default async function render(container) { // Экспортировали по умолчанию функцию render с аргументом container из SRC/index.js
-
-	container.innerHTML = await Balance();
-	let wr = document.createElement('div');
-	wr.className = 'wr-catalog';
-	container.append(wr);
-
+function generateCards(listItem) {
+	let htmlCards = ''
 	for(let i = 0; i < listItem.length; i++) { // пробегаемся по массиву оборудования
 		// записываем (не перезатираем) данные в документ index.html
-		wr.innerHTML += `
+		htmlCards += `
 			<ul class="catalog-container">
 				<div class="catalog-element">
-					<img class="catalog-element__img"src="${listItem[i].imgUrl}" />
+					<img class="catalog-element__img" src="${listItem[i].imgUrl}" />
 					<span class="catalog-element__type"> ${listItem[i].type} </span>
 					<span class="catalog-element__brand"> ${listItem[i].brand} </span>
 						<a data-link="true" href="/product/${listItem[i].idKey}" >
@@ -137,10 +132,12 @@ export default async function render(container) { // Экспортировал�
 						</a>
 				</div>
 			</ul>
-			` ;
-	} 	/* на 122 строке - в data-link записываем ссылку на продукт по idKey
-			на 123 строке - добавляем картинку оборудования на страницу 
-			на 124 строке - добавляем тип оборудования на страницу 
-			на 125 строке - добавляем бренд оборудования на страницу 
-	*/
+			`
+	}
+	return htmlCards;
+}
+
+export default async function render(container) { // Экспортировали по умолчанию функцию render с аргументом container из SRC/index.js
+	container.innerHTML = await Balance();
+	container.innerHTML += `<div class="wr-catalog">${generateCards(listItem)}</div>`
 }

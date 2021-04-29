@@ -1,3 +1,5 @@
+/*Стили картинки и заголовка*/
+
 .home-container {
 	display: flex;
 	flex-direction: column;
@@ -24,6 +26,7 @@
 
 .home-element__btn {
 	padding: var(--spacing-medium);
+	background-color: var(--color-blackgrey);
 	font-size: 30px;
 	width: max-content;
 	height: max-content;
@@ -32,16 +35,24 @@
 	border-radius: var(--border-radius);
 }
 
-/*.home-element__text {
-	font-family: Verdana, Geneva, Tahoma, sans-serif, bold;
-	font-size: 30px;
-	margin: 10px 0 25px 0;
-}*/
 
-/*.home-element__text2 {
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	font-size: 20px;
-	margin-bottom: 13px;
-}*/
+/*Стили формы регистрации и входа в систему*/
+.element-container__form {
 
+}
 
+.element-container__email {
+
+}
+
+.element-container__password {
+
+}
+
+.element-container__logIn {
+
+}
+
+.element-container__forgetPassword {
+
+}

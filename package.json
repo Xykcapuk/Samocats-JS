@@ -30,6 +30,13 @@
     "parcel-bundler": "^1.12.5",
     "postcss-modules": "^4.0.0",
     "prettier": "^2.2.1"
-  }
-  
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xykcapuk/samocats.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Xykcapuk/samocats/issues"
+  },
+  "homepage": "https://github.com/Xykcapuk/samocats#readme"
 }

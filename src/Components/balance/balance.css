@@ -1,0 +1,20 @@
+.balance-container {
+    display: flex;
+    width: 100%;
+    /*max-width: 1400px;*/
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.element-container__balance, .element-container__rubles {
+    font-family: Bahnschrift, serif;
+    font-size: 36px;
+    padding-right: 5px;
+}
+
+.element-container__icon {
+    padding-left: 10px;
+    width: 3%;
+    height: 3%;
+}
