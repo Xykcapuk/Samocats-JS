@@ -1,7 +1,6 @@
 import "./balance.css"
 
 export default async function render() {
-
 	return `
 		<div class="balance-container">
 			<span class="element-container__balance">100</span>

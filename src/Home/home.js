@@ -1,13 +1,7 @@
 import "./home.css"; // Импортировали home.css
 
-// function homePage() {
-// 	let footerEl = ''
-//
-// 	return footerEl;
-// }
-
-export default function render(container) { // Экспортируем по умолчанию функцию renderHome
-	container.innerHTML = ` 
+function homePage() {
+	let htmlHome = `
 		<div class="home-container">
 			<img class="home-element__img" src="https://i.ibb.co/kQY0r8J/logo1.jpg"  alt="логотип"/>
 			<span class="home-element__h1"> Добро пожаловать на Samocat.ru </span>
@@ -33,13 +27,13 @@ export default function render(container) { // Экспортируем по у�
 				</form>
 			</div>
 		</div>
-		`
-	//container.innerHTML = footer();
-	//container.innerHTML = `<div>${homePage()}</div>`
+	`
+	return htmlHome
 }
-//import footer from "../Components/footer/footer.js";
 
+import footer from "../Components/footer/footer.js";
 
-//<a data-link="true" href="/catalog">
-//<button class="home-element__btn">Перейти в каталог</button>
-//</a>
+export default function render(container) {
+	container.innerHTML = `<div>${homePage()}</div>`
+	container.innerHTML += footer();
+}

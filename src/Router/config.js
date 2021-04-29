@@ -22,11 +22,11 @@ export default [ // экспортируем файлы по умолчанию,
 		page: import("../Catalog/catalog.js"),
 		cache: null
 	},
-	// {
-	// 	title: 'Samocat.ru',
-	// 	name: 'footer',
-	// 	path: 'footer',
-	// 	page: import("../Components/footer/footer.js"),
-	// 	cache: null
-	// }
+	{
+		title: 'Samocat.ru',
+		name: 'footer',
+		path: 'footer',
+		page: import("../Components/footer/footer.js"),
+		cache: null
+	}
 ]
