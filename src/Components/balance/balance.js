@@ -1,7 +1,8 @@
+// Импортируем стили
 import "./balance.css"
-
+// Создаем дефолтную асинхронную функцию render
 export default async function render() {
-
+	// Возвращаем данные для HTML и дальнейшего вызова на страницах
 	return `
 		<div class="balance-container">
 			<span class="element-container__balance">100</span>
@@ -10,6 +11,3 @@ export default async function render() {
 		</div>
 	`
 }
-
-//let response = await fetch('http://localhost:1234', );
-//const json = await response;

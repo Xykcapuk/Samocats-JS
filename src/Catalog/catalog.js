@@ -1,7 +1,7 @@
-import "./catalog.css"; // Импортировали Users/catalog.css 
-//import img from '/PublicPhoto/logo/logo1'; //Принудительно подвязали картинку
-
-const listItem = [ //временный массив карточек оборудования. Ждём базу данных от бэка
+// Импортируем стили
+import "./catalog.css";
+// Создаем временный массив с данными карточек оборудования
+const listItem = [
 		{
 			type:'Велосипед',
 			brand:'Cross',
@@ -114,13 +114,18 @@ const listItem = [ //временный массив карточек обору
 			imgUrl: 'https://i.ibb.co/sq5SWXs/monocoleso-Fast-Wheel.jpg'
 		},
 ];
-
+// Импортируем Balance
 import Balance from "/Components/balance/balance.js";
+// Импортируем footer
+import footer from "/Components/footer/footer.js";
 
+// Создаем функцию для генерации карточек из массива
 function generateCards(listItem) {
+	// Создаем переменную и записываем туда пустой HTML
 	let htmlCards = ''
-	for(let i = 0; i < listItem.length; i++) { // пробегаемся по массиву оборудования
-		// записываем (не перезатираем) данные в документ index.html
+	// Создаем цикл и бежим по массиву карточек оборудования
+	for(let i = 0; i < listItem.length; i++) {
+		// После каждой итерации записываем необходимые данные в переменную
 		htmlCards += `
 			<ul class="catalog-container">
 				<div class="catalog-element">
@@ -134,10 +139,15 @@ function generateCards(listItem) {
 			</ul>
 			`
 	}
+	// Возвращаем уже заполненную переменную данными
 	return htmlCards;
 }
-
-export default async function render(container) { // Экспортировали по умолчанию функцию render с аргументом container из SRC/index.js
+// Вызываем дефолтную асинхронную функцию для заполнения данными основного контейнера
+export default async function render(container) {
+	// Записываем в основной контейнер с ожиданием Balance
 	container.innerHTML = await Balance();
+	// Добавляем в основной контейнер карточки оборудования с данными из цикла
 	container.innerHTML += `<div class="wr-catalog">${generateCards(listItem)}</div>`
+	// Добавляем в основной контейнер footer
+	container.innerHTML += footer();
 }

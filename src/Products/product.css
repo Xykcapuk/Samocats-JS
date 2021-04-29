@@ -26,10 +26,11 @@
 }
 
 .element-container__btn {
-    display: flex;
-    align-items: center;
-    text-decoration: inherit;
-    font-size: 24px;
-    height: 30px;
-    padding: 25px;
+    padding: var(--spacing-medium);
+    background-color: var(--color-blackgrey);
+    font-size: 18px;
+    width: max-content;
+    height: max-content;
+    border: none;
+    border-radius: var(--border-radius);
 }

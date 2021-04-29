@@ -1,8 +1,13 @@
+// Импортируем стили
 import "./product.css";
+// Импортируем Balance
 import Balance from "/Components/balance/balance.js";
+// Импортируем footer
+import footer from "/Components/footer/footer.js";
 
-export default async function render(container) { // Экспортировали по умолчанию функцию render с аргументом container из SRC/index.js
-	
+// Создаем для дальнейшего импорта дифолтную асинхронную функцию для основного контейнера
+export default async function render(container) {
+	// Создаем переменную и кладём туда данные оборудования (принудительно)
 	let result = {
 		type:'Моноколесо',
 		brand:'Fastwheel',
@@ -15,8 +20,9 @@ export default async function render(container) { // Экспортировал�
 		timeRent: '',
 		imgUrl: 'https://i.ibb.co/sq5SWXs/monocoleso-Fast-Wheel.jpg'
 	}
-
+	// Записываем в HTML основного контейнера с ожиданием Balance и отображаем его
 	container.innerHTML = await Balance();
+	// Добавляем к Balance в HTML основного контейнера данные по оборудованию
 	container.innerHTML += `
 		<div class="element-container">
 			<img class="element-container__img"src="${result.imgUrl}" />
@@ -29,4 +35,6 @@ export default async function render(container) { // Экспортировал�
 			</p>
 		</div>
 	`
+	// Добавляем в HTML основного контейнера footer
+	container.innerHTML += footer();
 }

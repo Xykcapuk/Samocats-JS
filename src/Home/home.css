@@ -27,7 +27,7 @@
 .home-element__btn {
 	padding: var(--spacing-medium);
 	background-color: var(--color-blackgrey);
-	font-size: 30px;
+	font-size: 10px;
 	width: max-content;
 	height: max-content;
 	margin-top: var(--spacing-medium);
@@ -37,22 +37,44 @@
 
 
 /*Стили формы регистрации и входа в систему*/
+.form-container {
+	width: 100%;
+	height: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .element-container__form {
 
 }
 
 .element-container__email {
-
+	display: flex;
+	justify-content: center;
 }
 
 .element-container__password {
-
+	display: flex;
+	justify-content: center;
 }
 
 .element-container__logIn {
+	display: flex;
+	justify-content: center;
+}
 
+.element-container__btn {
+	padding: var(--spacing-medium);
+	background-color: var(--color-blackgrey);
+	font-size: 18px;
+	width: max-content;
+	height: max-content;
+	border: none;
+	border-radius: var(--border-radius);
 }
 
 .element-container__forgetPassword {
-
+	display: flex;
+	justify-content: center;
 }

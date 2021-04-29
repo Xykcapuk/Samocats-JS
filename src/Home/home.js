@@ -1,17 +1,14 @@
+// Импортируем стили
 import "./home.css"; // Импортировали home.css
 
-// function homePage() {
-// 	let footerEl = ''
-//
-// 	return footerEl;
-// }
-
-export default function render(container) { // Экспортируем по умолчанию функцию renderHome
-	container.innerHTML = ` 
+// Создаем отдельную функцию homePage
+function homePage() {
+	// Создаем переменную и добавляем данные в HTML
+	let htmlHome = `
 		<div class="home-container">
 			<img class="home-element__img" src="https://i.ibb.co/kQY0r8J/logo1.jpg"  alt="логотип"/>
 			<span class="home-element__h1"> Добро пожаловать на Samocat.ru </span>
-			<div id="form-container">
+			<div class="form-container">
 				<form class="element-container__form">
 					<p class="element-container__email">
 						<input type="text" name="email" value="Введите E-mail" />
@@ -33,13 +30,16 @@ export default function render(container) { // Экспортируем по у�
 				</form>
 			</div>
 		</div>
-		`
-	//container.innerHTML = footer();
-	//container.innerHTML = `<div>${homePage()}</div>`
+	`
+	// Возвращаем HTML
+	return htmlHome
 }
-//import footer from "../Components/footer/footer.js";
-
-
-//<a data-link="true" href="/catalog">
-//<button class="home-element__btn">Перейти в каталог</button>
-//</a>
+// Импортируем footer для отображения
+import footer from "../Components/footer/footer.js";
+// Создаем дефолтную функцию для добавлений всех выше написанных данных в основной container
+export default function render(container) {
+	// Записываем в HTML основного контейнера данные из функции homePage
+	container.innerHTML = `<div>${homePage()}</div>`
+	// Добавляем в HTML основного контейнера footer
+	container.innerHTML += footer();
+}

@@ -1,0 +1,19 @@
+.footer-container {
+    /*position: fixed;*/
+    top: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 100%;
+    text-decoration: none;
+}
+
+.element-container__rules {
+    padding-right: 15px;
+    text-decoration: none;
+}
+
+.element-container__help {
+    text-decoration: none;
+}
