@@ -2,10 +2,9 @@
 import "./balance.css"
 // Создаем дефолтную асинхронную функцию render
 export default async function render() {
-<<<<<<< HEAD
+
 	// Возвращаем данные для HTML и дальнейшего вызова на страницах
-=======
->>>>>>> origin/main
+
 	return `
 		<div class="balance-container">
 			<span class="element-container__balance">100</span>
