@@ -1,9 +1,13 @@
 // Импортируем стили
 import "./home.css"; // Импортировали home.css
 
+<<<<<<< HEAD
 // Создаем отдельную функцию homePage
 function homePage() {
 	// Создаем переменную и добавляем данные в HTML
+=======
+function homePage() {
+>>>>>>> origin/main
 	let htmlHome = `
 		<div class="home-container">
 			<img class="home-element__img" src="https://i.ibb.co/kQY0r8J/logo1.jpg"  alt="логотип"/>
@@ -31,6 +35,7 @@ function homePage() {
 			</div>
 		</div>
 	`
+<<<<<<< HEAD
 	// Возвращаем HTML
 	return htmlHome
 }
@@ -41,5 +46,14 @@ export default function render(container) {
 	// Записываем в HTML основного контейнера данные из функции homePage
 	container.innerHTML = `<div>${homePage()}</div>`
 	// Добавляем в HTML основного контейнера footer
+=======
+	return htmlHome
+}
+
+import footer from "../Components/footer/footer.js";
+
+export default function render(container) {
+	container.innerHTML = `<div>${homePage()}</div>`
+>>>>>>> origin/main
 	container.innerHTML += footer();
 }
