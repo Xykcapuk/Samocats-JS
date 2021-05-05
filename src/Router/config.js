@@ -22,11 +22,7 @@ export default [
 		page: import("../Catalog/catalog.js"),
 		cache: null
 	},
-<<<<<<< HEAD
 	{ // тоже самое
-=======
-	{
->>>>>>> origin/main
 		title: 'Samocat.ru',
 		name: 'footer',
 		path: 'footer',

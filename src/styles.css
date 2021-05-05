@@ -1,6 +1,7 @@
 :root {
 	--color-white: white;
-	--color-blackgrey: rgb(115, 115, 115);;
+	--color-blackgrey: rgb(115, 115, 115);
+	;
 	--color-basicPage: bisque;
 	--color-logInOutPage: rgba(251, 148, 103, 38%);
 	--color-footer: rgba(160, 152, 152, 0.2);
@@ -20,5 +21,5 @@ body {
 	margin: 0;
 	padding: 0;
 	font-family: sans-serif;
-	
+
 }

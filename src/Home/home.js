@@ -1,7 +1,6 @@
 // Импортируем стили
 import "./home.css"; // Импортировали home.css
 
-
 // Создаем отдельную функцию homePage
 function homePage() {
 	// Создаем переменную и добавляем данные в HTML
@@ -47,7 +46,7 @@ export default function render(container) {
 	return htmlHome
 }
 
-export default function render(container) {
-	container.innerHTML = `<div>${homePage()}</div>`
-	container.innerHTML += footer();
-}
+//export default function render(container) {
+//	container.innerHTML = `<div>${homePage()}</div>`
+//	container.innerHTML += footer();
+//}
