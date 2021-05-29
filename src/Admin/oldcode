@@ -1,0 +1,201 @@
+export default function render(container) {
+  container.innerHTML = `
+    <table class="table">
+      <thead>
+        <tr class="first-line__table">
+          <th scope="col">№ п/п</th>
+          <th scope="col">Наименование</th>
+          <th scope="col">Модель</th>
+          <th scope="col">Стоимость</th>
+          <th scope="col">Статус</th>
+          <th scope="col">ID</th>
+          <th scope="col">Время</th>
+          <th scope="col">Действие</th>
+        </tr>
+      </thead>
+      <tbody class="tbody">
+      </tbody>
+  </table>
+  <button>Add new</button>
+  `
+  const listItem = [
+    {
+      type: 'Велосипед',
+      brand: 'Cross',
+      color: 'Чёрный',
+      value: '100',
+      currency: 'рублей',
+      status: true,
+      idKey: 'el1',
+      timeRent: '',
+      imgUrl: 'https://i.ibb.co/8KFb9xJ/bicycle-Cross.jpg'
+    },
+    {
+      type: 'Велосипед',
+      brand: 'Corraser',
+      color: 'Сине-серый',
+      value: '100',
+      currency: 'рублей',
+      status: true,
+      idKey: 'el2',
+      timeRent: '',
+      imgUrl: 'https://i.ibb.co/6Rx750c/bicycle-Corraser.jpg'
+    },
+    {
+      type: 'Мускульный самокат',
+      brand: 'Exooter',
+      color: 'Оранжевый',
+      value: '100',
+      currency: 'рублей',
+      status: true,
+      idKey: 'el3',
+      timeRent: '',
+      imgUrl: 'https://i.ibb.co/x1JKd57/scooter-Sport-Exooter.jpg'
+    },
+    {
+      type: 'Стантовый самокат',
+      brand: 'Crew',
+      color: 'Чёрный',
+      value: '100',
+      currency: 'рублей',
+      status: true,
+      idKey: 'el4',
+      timeRent: '',
+      imgUrl: 'https://i.ibb.co/GQsnw0q/scooter-Sport-Crew.jpg'
+    },
+    {
+      type: 'Стантовый самокат',
+      brand: 'Prodigy',
+      color: 'Красно-чёрный',
+      value: '100',
+      currency: 'рублей',
+      status: true,
+      idKey: 'el5',
+      timeRent: '',
+      imgUrl: 'https://i.ibb.co/4TWKJhw/scooter-Sport-Prodigy.jpg'
+    },
+    {
+      type: 'Электрический самокат',
+      brand: 'Inokim',
+      color: 'Оранжевый',
+      value: '100',
+      currency: 'рублей',
+      status: true,
+      idKey: 'el6',
+      timeRent: '',
+      imgUrl: 'https://i.ibb.co/vhQ0CGP/electro-Scooter-Inokim.jpg'
+    },
+    {
+      type: 'Электрический самокат',
+      brand: 'NineBot',
+      color: 'Чёрный',
+      value: '100',
+      currency: 'рублей',
+      status: true,
+      idKey: 'el7',
+      timeRent: '',
+      imgUrl: 'https://i.ibb.co/3sdryPX/electro-Scooter-Nine-Bot.jpg'
+    },
+    {
+      type: 'Электрический самокат',
+      brand: 'Xiaomi',
+      color: 'Чёрный',
+      value: '100',
+      currency: 'рублей',
+      status: true,
+      idKey: 'el8',
+      timeRent: '',
+      imgUrl: 'https://i.ibb.co/k5wypys/electro-Scooter-Xiaomi.jpg'
+    },
+    {
+      type: 'Моноколесо',
+      brand: 'Solowheel',
+      color: 'Чёрный',
+      value: '100',
+      currency: 'рублей',
+      status: true,
+      idKey: 'el9',
+      timeRent: '',
+      imgUrl: 'https://i.ibb.co/1Qzysw4/monocoleso-Solo-Wheel.jpg'
+    },
+    {
+      type: 'Моноколесо',
+      brand: 'Fastwheel',
+      color: 'Белый',
+      nameValue: 'Стоимость',
+      value: '100',
+      currency: 'рублей',
+      status: true,
+      idKey: 'el10',
+      timeRent: '',
+      imgUrl: 'https://i.ibb.co/sq5SWXs/monocoleso-Fast-Wheel.jpg'
+    }
+  ]
+
+  const table = document.querySelector('tbody')
+
+  for (let i = 0;i < listItem.length;i++) {
+    const row = document.createElement('tr')
+    row.innerHTML = `
+      <td class="td">${i + 1}</td>
+      <td class="td">${listItem[i].type}</td>
+      <td class="td">${listItem[i].brand}</td>
+      <td class="td">${listItem[i].value}</td>
+      <td class="td">${listItem[i].status}</td>
+      <td class="td">${listItem[i].idKey}</td>
+      <td class="td">${listItem[i].timeRent}</td>
+      <td class="td"><button>Del</button></td>
+    `
+    table.appendChild(row)
+  }
+}
+
+
+
+
+
+
+
+
+
+if (name && model) {
+    const tr = document.createElement('tr')
+
+    const td1 = document.createElement('td')
+    const td2 = document.createElement('td')
+    const td3 = document.createElement('td')
+
+    const text1 = document.createTextNode(name)
+    const text2 = document.createTextNode(model)
+    const text3 = document.createElement('button')
+    const buttext = document.createTextNode('Удалить')
+    const atr = document.createAttribute('onclick')
+    atr.value = 'deleteRow(this)'
+    text3.appendChild(buttext)
+    text3.setAttributeNode(atr)
+
+    td1.appendChild(text1)
+    td2.appendChild(text2)
+    td3.appendChild(text3)
+
+    tr.appendChild(td1)
+    tr.appendChild(td2)
+    tr.appendChild(td3)
+
+    const table = document.getElementById('table')
+    table.appendChild(tr)
+    console.log('added')
+  }
+}
+
+function delAll() {
+  const table = document.getElementById('table')
+  for (let i = table.rows.length - 1;i > 0;i--) {
+    table.deleteRow(i)
+  }
+}
+
+// function deleteRow(r) {
+//   const i = r.parentNode
+//   document.getElementById('table').deleteRow(i)
+// }

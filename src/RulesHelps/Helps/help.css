@@ -1,0 +1,24 @@
+.help-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.help-text {
+    min-width: 750px;
+    text-align: center;
+    font-size: 30px;
+    font-family: Georgia, Times, serif;
+    padding: 0 100px;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.help-btn {
+    padding: var(--spacing-small);
+    font-size: 18px;
+    border: none;
+    border-radius: var(--border-radius);
+}

@@ -1,0 +1,34 @@
+.rules-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.politic-text {
+    min-width: 750px;
+    text-align: center;
+    font-size: 30px;
+    font-family: Georgia, Times, serif;
+    padding: 0 100px;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.text-container{
+    min-width: 750px;
+    text-align: justify;
+    font-size: 18px;
+    font-family: Georgia, Times, serif;
+    padding: 20px 100px;
+    line-height: 1.5;
+}
+
+.rules-btn {
+    padding: var(--spacing-small);
+    font-size: 18px;
+    border: none;
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+}

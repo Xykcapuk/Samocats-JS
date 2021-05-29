@@ -1,16 +1,10 @@
-// Импортируем стили
-import "./styles.css";
-// Импортируем catchLink
-import catchLink from './Utils/catchLink';
-// Импортируем router
+
+import './styles.css'
+import catchLink from './Utils/catchLink'
 import router from './Router/index';
 
-// Создаём асинхронную функцию
 (async() => {
-	//  Создаем переменную сontainer и возвращаем в нее все данные, которые передаем в основной контейнер
-	const container = document.querySelector('#container');
-	// Вызываем catchLink
-	catchLink(container, router);
-	// Вызываем с ожиданием router
-	await router(container);
-})();
+  const container = document.querySelector('#container')
+  catchLink(container, router)
+  await router(container)
+})()

@@ -1,153 +1,31 @@
-// Импортируем стили
-import "./catalog.css";
-// Создаем временный массив с данными карточек оборудования
-const listItem = [
-		{
-			type:'Велосипед',
-			brand:'Cross',
-			color: 'Чёрный',	
-			value: '100',
-			currency: 'рублей',
-			status: true,
-			idKey: 'el1',
-			timeRent: '',
-			imgUrl: 'https://i.ibb.co/8KFb9xJ/bicycle-Cross.jpg'
-		},
-		{
-			type:'Велосипед',
-			brand:'Corraser',
-			color: 'Сине-серый',
-			value: '100',
-			currency: 'рублей',
-			status: true,
-			idKey: 'el2',
-			timeRent: '',
-			imgUrl: 'https://i.ibb.co/6Rx750c/bicycle-Corraser.jpg'
-		},
-		{
-			type:'Мускульный самокат',
-			brand:'Exooter',
-			color: 'Оранжевый',
-			value: '100',
-			currency: 'рублей',
-			status: true,
-			idKey: 'el3',
-			timeRent: '',
-			imgUrl: 'https://i.ibb.co/x1JKd57/scooter-Sport-Exooter.jpg'
-		},
-		{
-			type:'Стантовый самокат',
-			brand:'Crew',
-			color: 'Чёрный',
-			value: '100',
-			currency: 'рублей',
-			status: true,
-			idKey: 'el4',
-			timeRent: '',
-			imgUrl: 'https://i.ibb.co/GQsnw0q/scooter-Sport-Crew.jpg'
-		},
-		{
-			type:'Стантовый самокат',
-			brand:'Prodigy',
-			color: 'Красно-чёрный',
-			value: '100',
-			currency: 'рублей',
-			status: true,
-			idKey: 'el5',
-			timeRent: '',
-			imgUrl: 'https://i.ibb.co/4TWKJhw/scooter-Sport-Prodigy.jpg'
-		},
-		{
-			type:'Электрический самокат',
-			brand:'Inokim',
-			color: 'Оранжевый',
-			value: '100',
-			currency: 'рублей',
-			status: true,
-			idKey: 'el6',
-			timeRent: '',
-			imgUrl: 'https://i.ibb.co/vhQ0CGP/electro-Scooter-Inokim.jpg'
-		},
-		{
-			type:'Электрический самокат',
-			brand:'NineBot',
-			color: 'Чёрный',
-			value: '100',
-			currency: 'рублей',
-			status: true,
-			idKey: 'el7',
-			timeRent: '',
-			imgUrl: 'https://i.ibb.co/3sdryPX/electro-Scooter-Nine-Bot.jpg'
-		},
-		{
-			type:'Электрический самокат',
-			brand:'Xiaomi',
-			color: 'Чёрный',
-			value: '100',
-			currency: 'рублей',
-			status: true,
-			idKey: 'el8',
-			timeRent: '',
-			imgUrl: 'https://i.ibb.co/k5wypys/electro-Scooter-Xiaomi.jpg'
-		},
-		{
-			type:'Моноколесо',
-			brand:'Solowheel',
-			color: 'Чёрный',
-			value: '100',
-			currency: 'рублей',
-			status: true,
-			idKey: 'el9',
-			timeRent: '',
-			imgUrl: 'https://i.ibb.co/1Qzysw4/monocoleso-Solo-Wheel.jpg'
-		},
-		{
-			type:'Моноколесо',
-			brand:'Fastwheel',
-			color: 'Белый',
-			nameValue: 'Стоимость',
-			value: '100',
-			currency: 'рублей',
-			status: true,
-			idKey: 'el10',
-			timeRent: '',
-			imgUrl: 'https://i.ibb.co/sq5SWXs/monocoleso-Fast-Wheel.jpg'
-		},
-];
-// Импортируем Balance
-import Balance from "/Components/balance/balance.js";
-// Импортируем footer
-import footer from "/Components/footer/footer.js";
+import './catalog.css'
+import Balance from '/Components/balance/balance.js'
+import footer from '/Components/footer/footer.js'
 
-// Создаем функцию для генерации карточек из массива
 function generateCards(listItem) {
-	// Создаем переменную и записываем туда пустой HTML
-	let htmlCards = ''
-	// Создаем цикл и бежим по массиву карточек оборудования
-	for(let i = 0; i < listItem.length; i++) {
-		// После каждой итерации записываем необходимые данные в переменную
-		htmlCards += `
+  let htmlCards = ''
+  for (let i = 0;i < listItem.length;i++) {
+    htmlCards += `
 			<ul class="catalog-container">
 				<div class="catalog-element">
 					<img class="catalog-element__img" src="${listItem[i].imgUrl}" />
-					<span class="catalog-element__type"> ${listItem[i].type} </span>
+					<span class="catalog-element__type"> ${listItem[i].typeName} </span>
 					<span class="catalog-element__brand"> ${listItem[i].brand} </span>
-						<a data-link="true" href="/product/${listItem[i].idKey}" >
+						<a data-link="true" href="/product/${listItem[i].id}" >
 							<button class="catalog-element__btn">Арендовать</button>
 						</a>
 				</div>
 			</ul>
 			`
-	}
-	// Возвращаем уже заполненную переменную данными
-	return htmlCards;
+  }
+  return htmlCards
 }
-// Вызываем дефолтную асинхронную функцию для заполнения данными основного контейнера
+
+import { getCatalog } from '../Api/api.js'
+
 export default async function render(container) {
-	// Записываем в основной контейнер с ожиданием Balance
-	container.innerHTML = await Balance();
-	// Добавляем в основной контейнер карточки оборудования с данными из цикла
-	container.innerHTML += `<div class="wr-catalog">${generateCards(listItem)}</div>`
-	// Добавляем в основной контейнер footer
-	container.innerHTML += footer();
+  container.innerHTML = await Balance()
+  const listItem = await getCatalog()
+  container.innerHTML += `<div class="wr-catalog">${generateCards(listItem)}</div>`
+  container.innerHTML += footer()
 }
